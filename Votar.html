@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exiliados 5 Vidas</title>
+<link rel="icon" type="image/jpg" href="https://i.ibb.co/ZYZTJP1/heart-background.jpg"/>
+<style>
+    body {
+        background: linear-gradient(180deg, rgb(22, 22, 22) 0%, rgba(0,0,0,1) 100%);
+        color: white;
+        font-family: "Monument", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        display: none;
+        opacity: 0;
+        transition: opacity 1s;
+        margin-top: 20px;
+    }
+    .name {
+        margin-bottom: 20px;
+    }
+    .heart {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('https://emojicdn.elk.sh/❤️');
+        background-size: cover;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .image-container {
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .image-container:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<div class="image-container" onclick="showContent()">
+    <img src="https://i.ibb.co/ZYZTJP1/heart-background.jpg" alt="Heart Image" style="max-width: 100%;">
+</div>
+
+<div class="container" id="content">
+    <div class="name">
+        <span contenteditable="true">Nombre 1</span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+    <div class="name">
+        <span contenteditable="true">Nombre 2</span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+    <div class="name">
+        <span contenteditable="true">Nombre 3</span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+    <div class="name">
+        <span contenteditable="true">Nombre 4</span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+    <div class="name">
+        <span contenteditable="true">Nombre 5</span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+</div>
+
+<script>
+    function showContent() {
+        var content = document.getElementById("content");
+        content.style.display = "flex";
+        content.style.flexDirection = "column";
+        content.style.alignItems = "center";
+        setTimeout(function() {
+            content.style.opacity = "1";
+        }, 50);
+        var imageContainer = document.querySelector(".image-container");
+        imageContainer.style.display = "none";
+    }
+
+    document.querySelectorAll('.heart').forEach(heart => {
+        heart.addEventListener('click', () => {
+            if (heart.style.backgroundImage.includes('❤️')) {
+                heart.style.backgroundImage = "url('https://emojicdn.elk.sh/%F0%9F%96%A4')";
+            } else {
+                heart.style.backgroundImage = "url('https://emojicdn.elk.sh/❤️')";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
